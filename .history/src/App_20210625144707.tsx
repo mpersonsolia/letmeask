@@ -15,7 +15,7 @@ function App() {
         <Route path = "/" exact component = {Home} />    
         <Route path = "/rooms/new" component = {NewRoom} />
         <Route path = "/rooms/n:id" component = {Room} />
-      </Switch>
+        </Switch>
     </AuthContextProvider>
     </BrowserRouter>
   );

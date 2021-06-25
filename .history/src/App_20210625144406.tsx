@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import { Home } from "./pages/Home";
 import { NewRoom } from "./pages/NewRoom";
@@ -11,11 +11,9 @@ function App() {
   return (
     <BrowserRouter>
     <AuthContextProvider>
-      <Switch>
         <Route path = "/" exact component = {Home} />    
-        <Route path = "/rooms/new" component = {NewRoom} />
+        <Route path = "/rooms/new" exact component = {NewRoom} />
         <Route path = "/rooms/n:id" component = {Room} />
-      </Switch>
     </AuthContextProvider>
     </BrowserRouter>
   );
