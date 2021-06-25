@@ -1,5 +1,6 @@
-import { createContext, ReactNode, useEffect, useState } from "react";
+import React, { createContext, ReactNode, useEffect, useState } from "react";
 import { auth, firebase } from "../services/firebase";
+
 
 type User = {
   id: string;
@@ -61,10 +62,10 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
           avatar: photoURL
         })
       }
-  return (
+    }
+    return (
     <AuthContext.Provider value = {{ user, signInWithGoogle }}>
       {props.children}
     </AuthContext.Provider>
   );
-  }
 }
