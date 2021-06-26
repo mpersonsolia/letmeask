@@ -49,7 +49,7 @@ export function Room() {
     setNewQuestion('');
   };
 
-  async function handleLikeQuestion(questionId: string, likedId: string | undefined) {
+  async function handleLikeQuestion(questionId: string, likedId: string) {
     if(likeId) {
     await database.ref(`rooms/${roomId}/questions/${questionId}/likes/${likeId}`).remove ()
   } else {

@@ -49,15 +49,15 @@ export function Room() {
     setNewQuestion('');
   };
 
-  async function handleLikeQuestion(questionId: string, likedId: string | undefined) {
-    if(likeId) {
-    await database.ref(`rooms/${roomId}/questions/${questionId}/likes/${likeId}`).remove ()
+  async function handleLikeQuestion(questionId: string, likedId: boolean) {
+    if(hasLiked) {
+    await database.ref(`rooms/${roomId}/questions/${questionId}/likes`).push ({
+      authorId: user?.id,      
+    })
   } else {
     await database.ref(`rooms/${roomId}/questions/${questionId}/likes`).push ({
       authorId: user?.id, 
-    })
   }
-}
 
   return (
     <div id = "page-room">
@@ -125,11 +125,11 @@ export function Room() {
                   strokeLinejoin="round"/>
                 </svg>
               </button>
-              )}
+              ) }
             </Question>
         })}
         </div>
       </main>
     </div>
   );
-} 
+}
