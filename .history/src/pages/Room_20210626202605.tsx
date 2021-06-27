@@ -27,7 +27,7 @@ export function Room() {
     event.preventDefault();
 
     if (newQuestion.trim() === '') {
-      return;
+      return
     }
 
     if(!user) {
@@ -47,7 +47,7 @@ export function Room() {
     await database.ref(`rooms/${roomId}/questions`).push(question);
 
     setNewQuestion('');
-  }
+  };
 
   async function handleLikeQuestion(questionId: string, likeId: string | undefined) {
     if(likeId) {

@@ -12,6 +12,7 @@ import { Button } from '../components/Button';
 
 import '../styles/auth.scss';
 
+
 export function Home() {
   const history = useHistory();
   const { user, signInWithGoogle } = useAuth();
@@ -55,7 +56,7 @@ export function Home() {
           />
         <div>
           <strong>Crie salas de Q&amp;A ao-vivo</strong>
-          <p>Tire as dúvidas da sua audiência em tempo real</p>
+          <p>Tire as dúvidas da sua audiência em tempo-real</p>
         </div>
 
       </aside>
