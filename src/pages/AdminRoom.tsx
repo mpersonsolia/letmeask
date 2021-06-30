@@ -14,6 +14,7 @@ import { database } from '../services/firebase';
 
 
 import '../styles/room.scss';
+import React from 'react';
 
 type RoomParams = {
   id: string;

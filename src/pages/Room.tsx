@@ -11,6 +11,7 @@ import { Question } from '../components/Question';
 
 import '../styles/room.scss';
 import { useRoom } from '../hooks/useRoom';
+import React from 'react';
 
 type RoomParams = {
   id: string;
